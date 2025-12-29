@@ -1,24 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>7b3a26b2-56d6-4f6a-9564-c57d950606f9</UserSecretsId>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>$(NoWarn);1591</NoWarn>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Mapster" Version="9.0.0-pre01" />
     <PackageReference Include="Mapster.DependencyInjection" Version="9.0.0-pre01" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="10.0.0-preview.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Scalar.AspNetCore" Version="2.11.6" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.11.10" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PharmaGO.Contract\PharmaGO.Contract.csproj" />

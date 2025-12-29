@@ -1,9 +1,7 @@
 using MapsterMapper;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
-using Microsoft.AspNetCore.OData.Routing.Attributes;
 using PharmaGO.Api.Controllers.Common;
 using PharmaGO.Application.Products.Queries.ListProducts;
 using PharmaGO.Contract.Product;
