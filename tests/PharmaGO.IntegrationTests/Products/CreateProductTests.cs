@@ -20,6 +20,8 @@ public class CreateProductTests(PostgreSqlFixture dbFixture, EnviromentVarsFixtu
             Name = "Aspirina",
             Price = 10.50m,
             Category = "Health",
+            Description = "Teste",
+            Image = ""
         };
 
         var response = await httpClient.PostAsJsonAsync($"/api/products/{TestPharmacy.Id}", createCommand);

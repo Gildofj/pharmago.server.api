@@ -7,7 +7,7 @@ namespace PharmaGO.Application.Products.Commands.CreateProduct;
 
 public record CreateProductCommand(
     string Name,
-    decimal Amount,
+    decimal Price,
     string Description,
     Category Category,
     string Image,

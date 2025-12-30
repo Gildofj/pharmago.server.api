@@ -6,8 +6,8 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 {
   public CreateProductCommandValidator()
   {
-    RuleFor(x => x.Name).NotEmpty();
-    RuleFor(x => x.Amount).NotEmpty();
+    RuleFor(x => x.Name).NotEmpty().NotNull();
+    RuleFor(x => x.Price).NotEmpty().NotNull();
     RuleFor(x => x.Description).Length(0, 300);
   }
 }

@@ -28,6 +28,7 @@ public sealed class Product : Entity
     {
         var product = new Product
         {
+            Id = Guid.NewGuid(),
             Name = name,
             Image = image,
             Price = price,
