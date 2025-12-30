@@ -9,9 +9,6 @@ public static partial class Errors
         public static Error InvalidCredentials =>
             Error.Unauthorized(code: "Auth.InvalidCred", description: "Invalid credentials.");
 
-        public static Error EmailNotInformed =>
-            Error.Validation(code: "Auth.EmailNotInformed", description: "Email not informed.");
-
         public static Error FirstNameNotInformed =>
             Error.Validation(code: "Auth.FirstNameNotInformed", description: "First name not informed.");
 

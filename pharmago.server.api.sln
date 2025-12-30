@@ -22,7 +22,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaGO.IntegrationTests", "tests\PharmaGO.IntegrationTests\PharmaGO.IntegrationTests.csproj", "{405806EE-ED84-4278-A82C-C4CCADD9F9C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaGO.Application.IntegrationTests", "tests\PharmaGO.Application.IntegrationTests\PharmaGO.Application.IntegrationTests.csproj", "{405806EE-ED84-4278-A82C-C4CCADD9F9C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmaGO.Core.UnitTests", "tests\PharmaGO.Core.UnitTests\PharmaGO.Core.UnitTests.csproj", "{1C398292-ED1F-4628-9B5B-E8E4D7A113FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{405806EE-ED84-4278-A82C-C4CCADD9F9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{405806EE-ED84-4278-A82C-C4CCADD9F9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{405806EE-ED84-4278-A82C-C4CCADD9F9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C398292-ED1F-4628-9B5B-E8E4D7A113FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C398292-ED1F-4628-9B5B-E8E4D7A113FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C398292-ED1F-4628-9B5B-E8E4D7A113FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C398292-ED1F-4628-9B5B-E8E4D7A113FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +74,6 @@ Global
 		{2C6398E7-FB01-4F2E-A606-A26DFC425E99} = {A22B7990-A564-42CE-B125-7FB6335DCBE7}
 		{72B603AA-7D81-4979-B023-994758089A84} = {A22B7990-A564-42CE-B125-7FB6335DCBE7}
 		{405806EE-ED84-4278-A82C-C4CCADD9F9C2} = {E1FFF163-DA77-4137-B1D3-47EC2656444F}
+		{1C398292-ED1F-4628-9B5B-E8E4D7A113FA} = {E1FFF163-DA77-4137-B1D3-47EC2656444F}
 	EndGlobalSection
 EndGlobal

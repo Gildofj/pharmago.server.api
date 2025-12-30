@@ -83,7 +83,7 @@ public static class PharmacyDemoSeed
                 UpdatedAt = DateTime.UtcNow,
                 FirstName = "Admin",
                 LastName = "Demo",
-                Email = adminEmail,
+                Email = Email.Create(adminEmail).Value,
                 Phone = "(99) 99999-9999",
                 PharmacyId = pharmacy.Id,
             };

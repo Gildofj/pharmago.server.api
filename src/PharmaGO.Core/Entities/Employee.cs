@@ -16,48 +16,45 @@ public sealed class Employee : Person
         Guid pharmacyId
     )
     {
+        List<Error> errors = [];
+        
+        if (string.IsNullOrEmpty(firstName))
+        {
+            errors.Add(Errors.Authentication.FirstNameNotInformed);
+        }
+
+        if (string.IsNullOrEmpty(lastName))
+        {
+            errors.Add(Errors.Authentication.LastNameNotInformed);
+        }
+        
+        if (pharmacyId == Guid.Empty)
+        {
+            errors.Add(Errors.Employee.PharmacyIdRequired);
+        }
+        
+        var emailResult = ValueObjects.Email.Create(email);
+
+        if (emailResult.IsError)
+        {
+            errors.AddRange(emailResult.Errors);
+        }
+
+        if (errors.Count > 0)
+        {
+            return errors;
+        }
+        
         var employee = new Employee
         {
             Id = Guid.NewGuid(),
             FirstName = firstName,
             LastName = lastName,
-            Email = email,
+            Email = emailResult.Value,
             Phone = phone,
             PharmacyId = pharmacyId,
         };
 
-        if (employee.ValidateEmployeeData() is { } errors)
-        {
-            return errors;
-        }
-
         return employee;
-    }
-    
-    private List<Error>? ValidateEmployeeData()
-    {
-        List<Error> errors = [];
-        
-        if (string.IsNullOrEmpty(Email))
-        {
-            errors.Add(Errors.Authentication.EmailNotInformed);
-        }
-
-        if (string.IsNullOrEmpty(FirstName))
-        {
-            errors.Add(Errors.Authentication.FirstNameNotInformed);
-        }
-
-        if (string.IsNullOrEmpty(LastName))
-        {
-            errors.Add(Errors.Authentication.LastNameNotInformed);
-        }
-        
-        if (PharmacyId == Guid.Empty)
-        {
-            errors.Add(Errors.Employee.PharmacyIdRequired);
-        }
-
-        return errors.Count > 0 ? errors : null;
     }
 }

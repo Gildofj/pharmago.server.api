@@ -16,42 +16,40 @@ public sealed class Client : Person
         string cpf
     )
     {
+        List<Error> errors = [];
+
+        if (string.IsNullOrEmpty(firstName))
+        {
+            errors.Add(Errors.Authentication.FirstNameNotInformed);
+        }
+
+        if (string.IsNullOrEmpty(lastName))
+        {
+            errors.Add(Errors.Authentication.LastNameNotInformed);
+        }
+        
+        var emailResult = ValueObjects.Email.Create(email);
+
+        if (emailResult.IsError)
+        {
+            errors.AddRange(emailResult.Errors);
+        }
+        
+        if (errors.Count > 0)
+        {
+            return errors;
+        }
+
         var employee = new Client
         {
             Id = Guid.NewGuid(),
             FirstName = firstName,
             LastName = lastName,
-            Email = email,
+            Email = emailResult.Value,
             Phone = phone,
             Cpf = cpf,
         };
 
-        if (employee.ValidateClientData() is { } errors)
-        {
-            return errors;
-        }
-
         return employee;
-    }
-
-    private List<Error>? ValidateClientData()
-    {
-        List<Error> errors = [];
-        if (string.IsNullOrEmpty(Email))
-        {
-            errors.Add(Errors.Authentication.EmailNotInformed);
-        }
-
-        if (string.IsNullOrEmpty(FirstName))
-        {
-            errors.Add(Errors.Authentication.FirstNameNotInformed);
-        }
-
-        if (string.IsNullOrEmpty(LastName))
-        {
-            errors.Add(Errors.Authentication.LastNameNotInformed);
-        }
-
-        return errors.Count > 0 ? errors : null;
     }
 }
